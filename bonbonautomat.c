@@ -36,9 +36,9 @@ void bonbonautomat_init(void) {
     bmlTim3InitChannel(PC8, 0, TIM3_POLARITY_LOW); // Grün
     bmlTim3InitChannel(PC9, 0, TIM3_POLARITY_LOW); // Blau
 
-    bmlTim3SetDutyCycle(TIM3_CH2, 2, DUTY_PERCENT);    //DAS IS hellBLAU
-    bmlTim3SetDutyCycle(TIM3_CH3, 2, DUTY_PERCENT);  //DAS IS ROT (pink)
-    bmlTim3SetDutyCycle(TIM3_CH4, 2, DUTY_PERCENT);    // gelbgrün
+    bmlTim3SetDutyCycle(TIM3_CH2, 2, DUTY_PERCENT);      //Das ist hellblau
+    bmlTim3SetDutyCycle(TIM3_CH3, 2, DUTY_PERCENT);      //Das ist ROT (pink)
+    bmlTim3SetDutyCycle(TIM3_CH4, 2, DUTY_PERCENT);      // gelbgrün
     
 }
 
@@ -93,7 +93,7 @@ void fuellstand_update(void) {
     delay_ms(1);
     volatile uint16_t wert = ADC_Read(ADC1, 0);
 
-    fuellstand_ok = (wert > FUELL_SCHWELLE);      //je höherer wert desto weniger bonbons
+    fuellstand_ok = (wert > FUELL_SCHWELLE);      //je höherer Wert, desto weniger Bonbons
 }
 
 void led_set_blau(void) {
@@ -103,9 +103,9 @@ void led_set_blau(void) {
 }
 
 void led_set_rot(void) {
-    bmlTim3SetDutyCycle(TIM3_CH2, 20, DUTY_PERCENT);    //DAS IS hellBLAU
-    bmlTim3SetDutyCycle(TIM3_CH3, 0, DUTY_PERCENT);  //DAS IS ROT (pink)
-    bmlTim3SetDutyCycle(TIM3_CH4, 0, DUTY_PERCENT);    // gelbgrün
+    bmlTim3SetDutyCycle(TIM3_CH2, 20, DUTY_PERCENT);    //Das ist hellblau
+    bmlTim3SetDutyCycle(TIM3_CH3, 0, DUTY_PERCENT);     //Das ist ROT (pink)
+    bmlTim3SetDutyCycle(TIM3_CH4, 0, DUTY_PERCENT);    //gelbgrün
 }
 
 void led_set_gruen(void) {
@@ -129,7 +129,7 @@ void bonbonautomat_loop(void) {
 
     switch (state) {
         case STATE_IDLE:
-            if (!fuellstand_ok && auswurf_counter >= MAX_AUSWURF_BEI_LEER) {    //wenn Sensor low is dann gibts noch 5 Versuche frei um zu benutzen
+            if (!fuellstand_ok && auswurf_counter >= MAX_AUSWURF_BEI_LEER) {    //wenn Sensor low ist dann gibts noch 5 Versuche frei um zu benutzen
                 state = STATE_LOCKED_EMPTY;
                 break;
             }
@@ -145,7 +145,7 @@ void bonbonautomat_loop(void) {
             if (!fuellstand_ok) {
                 auswurf_counter++;
             }
-            state = STATE_COOLDOWN;                //kannsch direkt in idle gehn wenn bock hast
+            state = STATE_COOLDOWN;                
             break;
 
         case STATE_COOLDOWN:

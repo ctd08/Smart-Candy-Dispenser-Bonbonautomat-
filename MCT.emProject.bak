@@ -1,0 +1,60 @@
+<!DOCTYPE CrossStudio_Project_File>
+<solution Name="MCT" version="2" target="8">
+  <configuration Name="Debug" />
+  <project Name="Projekt1">
+    <configuration
+      Name="Common"
+      Target="STM32F446RETx"
+      arm_architecture="v7EM"
+      arm_compiler_variant="SEGGER"
+      arm_core_type="Cortex-M4"
+      arm_endian="Little"
+      arm_fp_abi="Hard"
+      arm_fpu_type="FPv4-SP-D16"
+      arm_linker_variant="SEGGER"
+      arm_simulator_memory_simulation_parameter="ROM;0x08000000;0x00080000;RAM;0x20000000;0x00020000"
+      arm_target_device_name="STM32F446RE"
+      arm_target_interface_type="SWD"
+      debug_register_definition_file="Scripts/STM32F446_Registers.xml"
+      debug_start_from_entry_point_symbol="No"
+      debug_target_connection="J-Link"
+      link_linker_script_file="$(StudioDir)/samples/SEGGER_Flash.icf"
+      linker_memory_map_file="Scripts/STM32F446RETx_MemoryMap.xml"
+      macros="DeviceFamily=STM32F4xx;DeviceSubFamily=STM32F446"
+      project_directory=""
+      project_type="Executable" />
+    <configuration
+      Name="Debug"
+      arm_linker_heap_size="16384"
+      arm_linker_stack_size="16384"
+      debug_target_connection="J-Link" />
+    <configuration
+      Name="External Keil ARMCC"
+      asm_additional_options="--cpu;Cortex-M3"
+      c_additional_options="--cpu;Cortex-M3;-O0;-g" />
+    <folder Name="Lib">
+      <file file_name="Lib/bml_gpio.c" />
+      <file file_name="Lib/bml_gpio.h" />
+      <file file_name="Lib/bml_irqn.h" />
+      <file file_name="Lib/bml_nvic.c" />
+      <file file_name="Lib/bml_nvic.h" />
+      <file file_name="Lib/bml_rcc.c" />
+      <file file_name="Lib/bml_rcc.h" />
+      <file file_name="Lib/bml_systick.c" />
+      <file file_name="Lib/bml_systick.h" />
+      <file file_name="Lib/bml_timer3.c" />
+      <file file_name="Lib/bml_timer3.h" />
+      <file file_name="Lib/bml_uart2.c" />
+      <file file_name="Lib/bml_uart2.h" />
+      <file file_name="Lib/ringbuffer.c" />
+      <file file_name="Lib/ringbuffer.h" />
+    </folder>
+    <folder Name="Scripts">
+      <file file_name="Scripts/STM32F4xx_Target.js" />
+    </folder>
+    <folder Name="Source">
+      <file file_name="Source/init.s" />
+      <file file_name="Source/main.c" />
+    </folder>
+  </project>
+</solution>

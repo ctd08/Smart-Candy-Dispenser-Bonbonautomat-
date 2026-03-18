@@ -35,7 +35,7 @@ In addition, the system monitors the fill level of the candy container using a l
     - Returns smoothly to the resting position
 - The movement is done gradually (in ~100 steps with short delays) to avoid mechanical stress or jamming.
 
-See demo here : bonbon-demo.mp4
+See demo here : https://github.com/ctd08/Smart-Candy-Dispenser-Bonbonautomat-/blob/d25d96dd94c21ee4848b8db373a290f086aa73cd/bonbon-demo.mp4
 
 ## Fill-Level Detection
 The fill level is measured using an LDR connected via a voltage divider to the ADC.

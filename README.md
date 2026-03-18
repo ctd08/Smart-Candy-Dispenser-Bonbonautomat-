@@ -1,5 +1,9 @@
 # Smart Candy Dispenser Bonbonautomat
 
+<p align="center">
+  <img src="bonbon.png" width="400">
+</p>
+
 This project was developed as part of my embedded systems class. The goal was to design and implement a small automated candy dispenser that reacts to user input, detects its internal fill level, and provides visual feedback using an RGB LED.
 
 The system dispenses chewing gum candies using a servo-driven mechanism. A coin (or object simulating one) is inserted into a slider. When the user presses a button, the servo moves the slider forward, releasing one candy and directing the coin into a collection container.
